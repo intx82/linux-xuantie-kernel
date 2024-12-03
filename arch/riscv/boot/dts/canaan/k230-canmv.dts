@@ -15,6 +15,7 @@
 
 	chosen {
 		stdout-path = "serial0:115200n8";
+		bootargs = "console=ttyS0,115200 root=/dev/mmcblk1p2 rw rootwait";
 	};
 
 	ddr: memory@0 {
@@ -34,9 +35,31 @@
 &uart0 {
 	status = "okay";
 };
+
+&uart1 {
+	status = "okay";
+};
+
 &uart3 {
 	status = "okay";
 };
+
+&uart4 {
+	status = "okay";
+};
+
+&mmc_sd0{
+    status = "okay";
+    io_fixed_1v8;
+    rx_delay_line = <0x00>;
+    tx_delay_line = <0x00>;
+
+	ap6212a: wifi@1 {
+		compatible = "brcm,bcm4329-fmac";
+		reg = <1>;
+	};
+};
+
 &mmc_sd1{
 	status = "okay";
 	no-1-8-v;
@@ -51,7 +74,22 @@
 	status = "okay";
 };
 
-&i2c3 {
+&i2c0{
+	status = "okay";
+};
+&i2c1{
+	status = "okay";
+};
+
+&i2c2{
+	status = "okay";
+};
+
+&i2c3{
+	status = "okay";
+};
+
+&i2c4{
 	status = "okay";
 };
 

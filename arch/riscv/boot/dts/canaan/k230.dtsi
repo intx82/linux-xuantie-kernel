@@ -329,6 +329,8 @@
 		mmc_sd0: sdhci0@91580000 {
 			compatible = "canaan,k230-dw-mshc";
 			reg = <0x0 0x91580000 0x0 0x1000>;
+			#address-cells = <1>;
+			#size-cells = <0>;
 			interrupts = <142 IRQ_TYPE_LEVEL_HIGH>;
 			interrupt-names = "sdhci0irq";
 			clocks = <&dummy_sd>,<&dummy_sd>;
